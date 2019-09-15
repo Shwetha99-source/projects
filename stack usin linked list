@@ -1,0 +1,71 @@
+#include <stdio.h>
+#include<stdlib.h>
+#include<conio.h>
+void push();
+void pop();
+struct node
+{
+    int data;
+    struct node*next;
+};
+struct node*head;
+void main()
+{
+    int ch=0;
+    printf("enter choice 1:push,2:pop");
+    scanf("%d",&ch);
+    switch(ch)
+    {
+        case 1:push();
+               break;
+        case 2:pop();
+               break;
+        default:exit(0);
+    }
+}
+    void push()
+    {
+        int data;
+        struct node*ptr=(struct node*)malloc(sizeof(struct node));
+        if(ptr==NULL)
+        {
+            printf("element cannot be pushed");
+        }
+        else
+        {
+        if (head==NULL)
+        {
+            printf("enter data");
+            scanf("%d",&data);
+            head==NULL;
+            ptr->data=data;
+            ptr->next=NULL;
+            head=ptr;
+        }
+        else
+        {
+            ptr->data=data;
+            ptr->next=head;
+            head=ptr;
+        }
+    }
+    }
+    void pop()
+    {
+        int ele;
+        struct node *ptr;
+        if(head==NULL)
+        {
+            printf("stack underflow");
+        }
+        else
+        {
+        ele=head->data;
+        ptr=head;
+        head=head->next;
+        free(ptr);
+        
+        }
+    
+    }
+
